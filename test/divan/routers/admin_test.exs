@@ -21,4 +21,12 @@ defmodule Divan.Routers.AdminTest do
 
     assert conn.status == 200
   end
+
+  test "delete a user" do
+    conn =
+      conn(:delete, "/_user/any_user_id")
+      |> Admin.call(@opts)
+
+    assert conn.status == 200
+  end
 end
