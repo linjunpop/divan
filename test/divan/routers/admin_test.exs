@@ -6,11 +6,19 @@ defmodule Divan.Routers.AdminTest do
 
   @opts Admin.init([])
 
-  test "post /_user/" do
+  test "create a user" do
     conn =
       conn(:post, "/_user/")
       |> Admin.call(@opts)
 
     assert conn.status == 201
+  end
+
+  test "update a user" do
+    conn =
+      conn(:put, "/_user/any_user_id")
+      |> Admin.call(@opts)
+
+    assert conn.status == 200
   end
 end
