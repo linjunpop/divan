@@ -4,7 +4,7 @@ defmodule Divan.Router.Admin do
   plug :match
   plug :dispatch
 
-  post "/_user/" do
+  post "/:db/_user/" do
     body = ~S({})
 
     conn
@@ -12,7 +12,7 @@ defmodule Divan.Router.Admin do
     |> send_resp(201, body)
   end
 
-  put "/_user/:id" do
+  put "/:db/_user/:id" do
     body = ~S({})
 
     conn
@@ -20,7 +20,7 @@ defmodule Divan.Router.Admin do
     |> send_resp(200, body)
   end
 
-  delete "/_user/:id" do
+  delete "/:db/_user/:id" do
     body = ~S({})
 
     conn

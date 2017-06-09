@@ -8,7 +8,7 @@ defmodule Divan.Routers.AdminTest do
 
   test "create a user" do
     conn =
-      conn(:post, "/_user/")
+      conn(:post, "/espresso/_user/")
       |> Admin.call(@opts)
 
     assert conn.status == 201
@@ -16,7 +16,7 @@ defmodule Divan.Routers.AdminTest do
 
   test "update a user" do
     conn =
-      conn(:put, "/_user/any_user_id")
+      conn(:put, "/espresso/_user/any_user_id")
       |> Admin.call(@opts)
 
     assert conn.status == 200
@@ -24,7 +24,7 @@ defmodule Divan.Routers.AdminTest do
 
   test "delete a user" do
     conn =
-      conn(:delete, "/_user/any_user_id")
+      conn(:delete, "/espresso/_user/any_user_id")
       |> Admin.call(@opts)
 
     assert conn.status == 200
