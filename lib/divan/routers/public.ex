@@ -1,4 +1,4 @@
-defmodule Divan.Router do
+defmodule Divan.Router.Public do
   use Plug.Router
 
   plug :match

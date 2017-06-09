@@ -1,15 +1,15 @@
-defmodule Divan.RouterTest do
+defmodule Divan.Routers.PublicTest do
   use ExUnit.Case, async: true
   use Plug.Test
 
-  alias Divan.Router
+  alias Divan.Router.Public
 
-  @opts Router.init([])
+  @opts Public.init([])
 
   test "get /" do
     conn =
       conn(:get, "/")
-      |> Router.call(@opts)
+      |> Public.call(@opts)
 
     assert conn.status == 200
   end

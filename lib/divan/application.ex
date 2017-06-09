@@ -12,7 +12,8 @@ defmodule Divan.Application do
     children = [
       # Starts a worker by calling: Divan.Worker.start_link(arg1, arg2, arg3)
       # worker(Divan.Worker, [arg1, arg2, arg3]),
-      Divan.child_spec()
+      Divan.child_spec(Divan.Router.Public),
+      Divan.child_spec(Divan.Router.Admin)
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

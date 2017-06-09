@@ -1,10 +1,10 @@
 defmodule Divan do
-  def child_spec do
+  def child_spec(module) when module in [Divan.Router.Public, Divan.Router.Admin] do
     Plug.Adapters.Cowboy.child_spec(
       :http,
-      Divan.Router,
-      [],
-      Divan.Config.load_config()
+      module,
+      [name: module],
+      Divan.Config.load_config(module)
     )
   end
 end
